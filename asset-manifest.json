@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.fe927caf.css",
-    "main.js": "/portfolio/static/js/main.0758a684.js",
+    "main.js": "/portfolio/static/js/main.73192a28.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/ssanino.jpg": "/portfolio/static/media/ssanino.0a3948713771962275fc.jpg",
     "static/media/pontifino.jpg": "/portfolio/static/media/pontifino.247a7868d81cb5e096a6.jpg",
@@ -14,11 +14,11 @@
     "static/media/the-portal-2.jpg": "/portfolio/static/media/the-portal-2.9449b6c78aabca7c2c80.jpg",
     "index.html": "/portfolio/index.html",
     "main.fe927caf.css.map": "/portfolio/static/css/main.fe927caf.css.map",
-    "main.0758a684.js.map": "/portfolio/static/js/main.0758a684.js.map",
+    "main.73192a28.js.map": "/portfolio/static/js/main.73192a28.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.0758a684.js"
+    "static/js/main.73192a28.js"
   ]
 }
