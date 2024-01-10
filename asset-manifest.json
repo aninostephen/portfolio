@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe927caf.css",
-    "main.js": "/static/js/main.5c8f8d65.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/ssanino.jpg": "/static/media/ssanino.0a3948713771962275fc.jpg",
-    "static/media/pontifino.jpg": "/static/media/pontifino.247a7868d81cb5e096a6.jpg",
-    "static/media/ceo.jpg": "/static/media/ceo.e6f988dcc8e97c6098ff.jpg",
-    "static/media/bsa-mansion.jpg": "/static/media/bsa-mansion.613ddbb571c9d70a5157.jpg",
-    "static/media/mezzo.jpg": "/static/media/mezzo.6666db86dd98971fd3a8.jpg",
-    "static/media/smsrooms.jpg": "/static/media/smsrooms.34383be3f574583f9768.jpg",
-    "static/media/the-portal.jpg": "/static/media/the-portal.9cd50c83415090b6580c.jpg",
-    "static/media/modliving.jpg": "/static/media/modliving.5ae5d49cf89d82f2df90.jpg",
-    "static/media/the-portal-2.jpg": "/static/media/the-portal-2.9449b6c78aabca7c2c80.jpg",
-    "index.html": "/index.html",
-    "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
-    "main.5c8f8d65.js.map": "/static/js/main.5c8f8d65.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/portfolio/static/css/main.fe927caf.css",
+    "main.js": "/portfolio/static/js/main.0758a684.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/ssanino.jpg": "/portfolio/static/media/ssanino.0a3948713771962275fc.jpg",
+    "static/media/pontifino.jpg": "/portfolio/static/media/pontifino.247a7868d81cb5e096a6.jpg",
+    "static/media/ceo.jpg": "/portfolio/static/media/ceo.e6f988dcc8e97c6098ff.jpg",
+    "static/media/bsa-mansion.jpg": "/portfolio/static/media/bsa-mansion.613ddbb571c9d70a5157.jpg",
+    "static/media/mezzo.jpg": "/portfolio/static/media/mezzo.6666db86dd98971fd3a8.jpg",
+    "static/media/smsrooms.jpg": "/portfolio/static/media/smsrooms.34383be3f574583f9768.jpg",
+    "static/media/the-portal.jpg": "/portfolio/static/media/the-portal.9cd50c83415090b6580c.jpg",
+    "static/media/modliving.jpg": "/portfolio/static/media/modliving.5ae5d49cf89d82f2df90.jpg",
+    "static/media/the-portal-2.jpg": "/portfolio/static/media/the-portal-2.9449b6c78aabca7c2c80.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.fe927caf.css.map": "/portfolio/static/css/main.fe927caf.css.map",
+    "main.0758a684.js.map": "/portfolio/static/js/main.0758a684.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.5c8f8d65.js"
+    "static/js/main.0758a684.js"
   ]
 }
