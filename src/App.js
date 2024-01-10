@@ -5,14 +5,18 @@ import {
   mainBody,
   about,
   repos,
+  eHistory,
   leadership,
   skills,
   getInTouch,
-  experiences
+  experiences,
+  contentImage,
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
+import Ehistory from "./components/home/Ehistory";
+import ContentImage from "./components/home/ContentImage";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Skills from "./components/home/Skills";
@@ -53,6 +57,18 @@ const Home = React.forwardRef((props, ref) => {
           username={repos.gitHubUsername}
           length={repos.reposLength}
           specfic={repos.specificRepos}
+        />
+      )}
+      {eHistory.show && (
+        <Ehistory
+          heading={eHistory.heading}
+          specfic={eHistory.specific}
+        />
+      )}
+      {contentImage.show && (
+        <ContentImage
+          heading={contentImage.heading}
+          specfic={contentImage.specific}
         />
       )}
       {leadership.show && (

@@ -21,6 +21,7 @@ const MainBody = React.forwardRef(
             {title}
           </h1>
           <Typist>
+            <div className="lead typist">aninostephen01@gmail.com | 09196881634</div>
             <div className="lead typist">
               {message}
             </div>
