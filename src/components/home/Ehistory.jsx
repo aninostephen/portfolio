@@ -1,55 +1,118 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
-import { Jumbotron } from "./migration";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 
 const Ehistory = ({ heading, specfic }) => {
-    console.log(specfic.length)
-    return (
-        <Jumbotron fluid id="history" className="bg-light m-0">
-          <Container className="">
-            <h2 className="display-4 pb-5 text-center">{heading}</h2>
-            <Row>
-                {specfic.map((history, index) => {
-                        return (
-                            <Col md={6}>
-                                <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
-                                    <Card.Body>
-                                        <Card.Title as="h5">Company: {history.companyName} </Card.Title>
-                                        <div>{history.startDate} - {history.endDate}</div>
-                                        <p></p>
-                                        <Card.Text><b>Address:</b> {history.address}</Card.Text>
-                                        <Card.Text><b>Position:</b> {history.position}</Card.Text>
-                                        <Card.Text><b>Description:</b> {history.description}</Card.Text>
-                                        <hr />
-                                        <Card.Text><b>What I Do:</b></Card.Text>
-                                        <ul>
-                                            {history.whatIDo.map(item => <li key={item}>{item}</li>)}
-                                        </ul>
-                                        <hr />
-                                        {
-                                            history.mostWork.length > 0 && (
-                                                <>
-                                                    <Card.Text><b>Most of my work:</b></Card.Text>
-                                                    <ul>
-                                                        {history.mostWork.map(item => <li key={item}>{item}</li>)}
-                                                    </ul>
-                                                </>
-                                            )
-                                        }
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        );
-                    })
-                }
-                
-            </Row>
-          </Container>
-        </Jumbotron>
-    );
+  return (
+    <div id="history" className="section">
+      <Container>
+        <div className="text-center mb-5">
+          <h2 className="section-heading">
+            Employment <span className="accent">History</span>
+          </h2>
+          <p className="section-subheading mx-auto">
+            A timeline of my professional journey over the past 10+ years.
+          </p>
+        </div>
+
+        <div className="timeline" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          {specfic.map((history, index) => (
+            <div className="timeline-item" key={index}>
+              <span className="timeline-date">
+                {history.startDate} — {history.endDate}
+              </span>
+              <div className="glass-card">
+                <h4
+                  style={{
+                    color: "#f0f0f5",
+                    fontWeight: 700,
+                    marginBottom: "0.25rem",
+                    fontSize: "1.15rem",
+                  }}
+                >
+                  {history.position}
+                </h4>
+                <p
+                  style={{
+                    color: "#818cf8",
+                    fontWeight: 500,
+                    fontSize: "0.95rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  {history.companyName} — {history.address}
+                </p>
+                <p
+                  style={{
+                    color: "#9ca3af",
+                    fontSize: "0.9rem",
+                    lineHeight: 1.7,
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {history.description}
+                </p>
+
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
+                  {history.whatIDo.map((item, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        color: "#d1d5db",
+                        fontSize: "0.88rem",
+                        paddingLeft: "1.25rem",
+                        position: "relative",
+                        marginBottom: "0.4rem",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          color: "#818cf8",
+                        }}
+                      >
+                        ›
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {history.mostWork.length > 0 && (
+                  <div style={{ marginTop: "1rem" }}>
+                    <p
+                      style={{
+                        color: "#f0f0f5",
+                        fontWeight: 600,
+                        fontSize: "0.9rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Key Projects:
+                    </p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                      {history.mostWork.map((item, i) => (
+                        <span className="skill-chip" key={i}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default Ehistory;

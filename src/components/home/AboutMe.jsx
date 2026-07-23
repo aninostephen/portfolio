@@ -1,72 +1,90 @@
 import React from "react";
-
-import axios from "axios";
-import { Jumbotron } from "./migration";
-
-const pictureLinkRegex = new RegExp(
-  /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
-);
+import Container from "react-bootstrap/Container";
 
 const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   const [profilePicUrl, setProfilePicUrl] = React.useState("");
-  const [showPic, setShowPic] = React.useState(Boolean(link));
-  // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
-  React.useEffect(() => {
-    const handleRequest = async () => {
-      const instaLink = "https://www.instagram.com/";
-      const instaQuery = "/?__a=1";
-      try {
-        const response = await axios.get(instaLink + link + instaQuery);
-        setProfilePicUrl(response.data.graphql.user.profile_pic_url_hd);
-      } catch (error) {
-        setShowPic(false);
-        console.error(error.message);
-      }
-    };
+  const [showPic] = React.useState(Boolean(link));
 
-    if (link && !pictureLinkRegex.test(link)) {
-      handleRequest();
-    } else {
+  React.useEffect(() => {
+    if (link) {
       setProfilePicUrl(link);
     }
   }, [link]);
 
-
-
   return (
-    <Jumbotron id="aboutme" className="m-0">
-      <div className="container row">
-        <div className="col-5 d-none d-lg-block align-self-center">
+    <div id="aboutme" className="section section-alt">
+      <Container>
+        <div className="row align-items-center">
+          {/* Image Column */}
           {showPic && (
-            <img
-              className="border border-secondary rounded-circle"
-              src={profilePicUrl}
-              alt="profilepicture"
-              width={imgSize}
-              height={imgSize}
-            />
+            <div className="col-lg-5 d-none d-lg-flex justify-content-center mb-4 mb-lg-0">
+              <div
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
+                {/* Glow ring behind image */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: "-8px",
+                    borderRadius: "50%",
+                    background:
+                      "linear-gradient(135deg, rgba(99,102,241,0.3), rgba(139,92,246,0.3))",
+                    filter: "blur(20px)",
+                    animation: "pulse-glow 4s ease-in-out infinite",
+                  }}
+                ></div>
+                <img
+                  src={profilePicUrl}
+                  alt="Stephen Anino"
+                  style={{
+                    width: imgSize,
+                    height: imgSize,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "3px solid rgba(99,102,241,0.4)",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                />
+              </div>
+            </div>
           )}
-        </div>
-        <div className={`col-lg-${showPic ? "7" : "12"}`}>
-          <h2 className="display-4 mb-5 text-center">{heading}</h2>
-          <p className="lead text-center">{message}</p>
-          {resume && (
-            <p className="lead text-center">
+
+          {/* Text Column */}
+          <div className={`col-lg-${showPic ? "7" : "12"}`}>
+            <h2 className="section-heading mb-4">
+              {heading.split(" ")[0]}{" "}
+              <span className="accent">{heading.split(" ").slice(1).join(" ")}</span>
+            </h2>
+            <p
+              style={{
+                color: "#9ca3af",
+                fontSize: "1.05rem",
+                lineHeight: 1.8,
+                marginBottom: "2rem",
+              }}
+            >
+              {message}
+            </p>
+            {resume && (
               <a
-                className="btn btn-outline-dark btn-lg"
+                className="btn-accent"
                 href={resume}
                 target="_blank"
                 rel="noreferrer noopener"
                 role="button"
-                aria-label="Resume/CV"
               >
-                Resume
+                <i className="fas fa-file-alt"></i>
+                View Resume
               </a>
-            </p>
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    </Jumbotron>
+      </Container>
+    </div>
   );
 };
 

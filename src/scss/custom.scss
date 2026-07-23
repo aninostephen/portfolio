@@ -1,3 +1,7 @@
+// Bootstrap overrides (must come before bootstrap import)
+$body-bg: #0a0a0f;
+$body-color: #e0e0e8;
+
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./animations";
 @import "./index";

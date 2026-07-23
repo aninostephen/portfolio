@@ -1,38 +1,61 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
-import { Jumbotron } from "./migration";
-import Image from 'react-bootstrap/Image';
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 
 const ContentImage = ({ heading, specfic }) => (
-    <>
-        <Jumbotron fluid id="mywork" className="bg-light m-0">
-            <Container className="">
-                <h2 className="display-4 pb-5 text-center">{heading}</h2>
-                <Row>
-                    {
-                        specfic.map((content, index) => {
-                            return (
-                                <Col md={4} xs={6}>
-                                    <a href={content.url} target="_blank">
-                                        <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
-                                            <>
-                                                <Image src={content.image} rounded/>
-                                                <hr />
-                                                <Card.Title as="h5">{content.name} </Card.Title>
-                                            </>
-                                        </Card>
-                                    </a>
-                                </Col>
-                            );
-                        })
-                    }
-                </Row>
-            </Container>
-        </Jumbotron>
-    </>
+  <div id="mywork" className="section section-alt">
+    <Container>
+      <div className="text-center mb-5">
+        <h2 className="section-heading">
+          Some of my <span className="accent">Work</span>
+        </h2>
+        <p className="section-subheading mx-auto">
+          A selection of projects and applications I've worked on.
+        </p>
+      </div>
+
+      <div className="row g-4">
+        {specfic.map((content, index) => (
+          <div className="col-lg-3 col-md-4 col-6" key={index}>
+            <a
+              href={content.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <div className="project-card">
+                <div className="project-card-image">
+                  <img src={content.image} alt={content.name} />
+                </div>
+                <div className="project-card-overlay">
+                  <span
+                    style={{
+                      color: "#fff",
+                      fontWeight: 600,
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    View Project →
+                  </span>
+                </div>
+                <div className="project-card-body">
+                  <h6
+                    style={{
+                      color: "#f0f0f5",
+                      fontWeight: 600,
+                      marginBottom: 0,
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {content.name}
+                  </h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </div>
 );
 
 export default ContentImage;

@@ -1,58 +1,59 @@
 import React from "react";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
-import SkillsTab from "./SkillsTab";
-import Row from "react-bootstrap/Row";
-import { Jumbotron } from "./migration";
-import { Container } from "react-bootstrap";
-import { useScrollPosition } from "../../hooks/useScrollPosition";
+import Container from "react-bootstrap/Container";
 
-const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
-  const skillsTabRef = React.useRef(null);
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  //const navbarDimensions = useResizeObserver(navbarMenuRef);
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!isScrolled && currPos.y - 400 < 0) setIsScrolled(true);
-    },
-    [],
-    skillsTabRef
-  );
+const Skills = ({ heading, categories }) => {
   return (
-    <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
-      <Container className="p-5 ">
-        <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
-          {heading}
-        </h2>
-        <Tabs
-          className="skills-tabs"
-          defaultActiveKey="hard-skills"
-          id="skills-tabs"
-          fill
-        >
-          <Tab
-            tabClassName="skills-tab lead"
-            eventKey="hard-skills"
-            title="Technical Skills"
-          >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={hardSkills} isScrolled={isScrolled} />
-            </Row>
-          </Tab>
-          <Tab
-            tabClassName="skills-tab lead"
-            eventKey="soft-skills"
-            title="Other Experience"
-          >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={softSkills} isScrolled={isScrolled} />
-            </Row>
-          </Tab>
-        </Tabs>
+    <div id="skills" className="section section-alt">
+      <Container>
+        <div className="text-center mb-5">
+          <h2 className="section-heading">
+            Technical <span className="accent">Skills</span>
+          </h2>
+          <p className="section-subheading mx-auto">
+            Technologies and tools I work with on a daily basis.
+          </p>
+        </div>
+
+        <div className="row g-4">
+          {categories &&
+            categories.map((category, index) => (
+              <div className="col-lg-4 col-md-6" key={index}>
+                <div
+                  className="glass-card h-100"
+                  style={{ padding: "1.75rem" }}
+                >
+                  <h5
+                    style={{
+                      color: "#818cf8",
+                      fontWeight: 600,
+                      fontSize: "0.85rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      marginBottom: "1.25rem",
+                    }}
+                  >
+                    {category.name}
+                  </h5>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    {category.items.map((skill, i) => (
+                      <span className="skill-chip" key={i}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
       </Container>
-    </Jumbotron>
+    </div>
   );
-});
+};
 
 export default Skills;
