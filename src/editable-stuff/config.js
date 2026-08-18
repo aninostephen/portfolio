@@ -37,7 +37,7 @@ const about = {
 Node.js, Laravel, and TypeScript. Experienced in scalable micro-frontend architecture, REST APIs,
 CI/CD pipelines, and cloud deployment. Passionate about developing high-performance web
 applications and solving complex technical challenges.`,
-  resume: "https://drive.google.com/file/d/1RtK8zvU273WQjpuLyv_f9rRroVJiXQ-R/view",
+  resume: "https://drive.google.com/file/d/1O7CM6aG3_mKtUIVMhzyHuA89A-6LFQMc/view",
 };
 
 // PROJECTS SECTION
