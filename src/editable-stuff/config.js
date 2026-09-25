@@ -33,7 +33,7 @@ const about = {
   imageLink: require("../editable-stuff/ssanino.jpg"),
   imageSize: 375,
   message:
-    `Full Stack Web Developer with 10 years of experience building enterprise applications using React,
+    `Full Stack Web Developer with 12 years of experience building enterprise applications using React,
 Node.js, Laravel, and TypeScript. Experienced in scalable micro-frontend architecture, REST APIs,
 CI/CD pipelines, and cloud deployment. Passionate about developing high-performance web
 applications and solving complex technical challenges.`,
